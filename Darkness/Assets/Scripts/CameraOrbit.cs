@@ -29,7 +29,7 @@ public class CameraOrbit : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!CameraDisabled)
+        if (!Player_Controller.freeze)
         {
             //Rotation of the Camera based on Mouse Coordinates
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)

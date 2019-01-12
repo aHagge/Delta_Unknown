@@ -8,6 +8,7 @@ public class Player_Controller : MonoBehaviour {
     public KeyCode right = KeyCode.D;
     public KeyCode back = KeyCode.S;
 
+    public static bool freeze;
     public Transform Camera;
     public float lerpspeed;
     public float walkspeed;
@@ -21,11 +22,14 @@ public class Player_Controller : MonoBehaviour {
     }
 	
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(freeze)
         {
-            Cursor.lockState = CursorLockMode.None;
+            forwardb = false;
+            forwardb = false;
+            rightb = false;
+            backb = false;
         }
-        if (Input.GetKeyDown(forward))
+        if (Input.GetKeyDown(forward) && !freeze)
         {
             forwardb = true;
         }
@@ -34,7 +38,7 @@ public class Player_Controller : MonoBehaviour {
             forwardb = false;
         }
 
-        if (Input.GetKeyDown(left))
+        if (Input.GetKeyDown(left) && !freeze)
         {
             leftb = true;
         }
@@ -43,7 +47,7 @@ public class Player_Controller : MonoBehaviour {
             leftb = false;
         }
 
-        if (Input.GetKeyDown(right))
+        if (Input.GetKeyDown(right) && !freeze)
         {
             rightb = true;
         }
@@ -52,7 +56,7 @@ public class Player_Controller : MonoBehaviour {
             rightb = false;
         }
 
-        if (Input.GetKeyDown(back))
+        if (Input.GetKeyDown(back) && !freeze)
         {
             backb = true;
         }

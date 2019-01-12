@@ -9,6 +9,7 @@ TagManager:
   - landPoint
   - BuildDot
   - Terrain
+  - Crafting
   layers:
   - Default
   - TransparentFX

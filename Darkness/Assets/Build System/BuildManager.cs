@@ -16,6 +16,14 @@ public class BuildManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Inventory.Itemselected == "Buildtool")
+        {
+            buildprellok.SetActive(true);
+        } else
+        {
+            buildprellok.SetActive(false);
+        }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if ((number + 1) != Buildings.Length)
